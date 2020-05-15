@@ -254,17 +254,9 @@ sudo chmod +x /usr/local/sbin/production_vm_recovery
 <li><p>Delete your <em>Initials</em><strong>-FiestaApp</strong> application in Calm (<strong>DO NOT DELETE THE BLUEPRINT</strong>) on your <strong>PrimarySite</strong> and validate the VMs have been deleted.</p></li>
 </ol>
 </div>
-</div>
-
-                    </div>
                     <div data-next-page class="next-page clearfix">
                         <a class="btn btn-primary float-right" href="#">Next: <span data-next-page-title></span> <i class="fa fa-fw fa-chevron-right btn-icon"></i></a>
                     </div>
-                </div>
-
-                </div>
-            </div>
-        </div>
         <footer>
             <div class="container">
                 <div class="row">
@@ -274,96 +266,4 @@ sudo chmod +x /usr/local/sbin/production_vm_recovery
                 </div>
             </div>
         </footer>
-
-    
-        <form id="impressed" class="d-none" method="post" action="/workshops/i/" enctype="multipart/form-data"><input type="hidden" name="csrfmiddlewaretoken" value="PdhKVLFMMugyjl90O5Mg68Y7uR701RpmQgNC9ROI6C0RgpoqjO2kAvSDHRCvtpQw">
-            <p><label for="id_user">user:</label> <input type="text" name="user" value="446c386ef08a4309bb7327446d3e4b0f" required id="id_user"></p>
-<p><label for="id_workshop">workshop:</label> <input type="text" name="workshop" value="d4403954493947f58ec63a8c72be6cd0" required id="id_workshop"></p>
-<p><label for="id_title">title:</label> <input type="text" name="title" value="DR with AHV Sync Rep and Leap" maxlength="255" required id="id_title"></p>
-<p><label for="id_path">path:</label> <input type="text" name="path" value="onpremleap/onpremleap" maxlength="2048" required id="id_path"></p>
-<p><label for="id_digest">digest:</label> <input type="text" name="digest" value="31865f3dccc6a492f88ab00de6e95d2c71ba55eaaa3213d0c3df1718a4e01e30e20c983316832a0821f1da6f0d1b0f93332c4000722b3ae03f868192e1d6ff43" maxlength="128" required id="id_digest"></p>
-        </form>
-    
-        <div data-fixed class="back-to-top">
-            <a href="#top" class="btn btn-secondary"><i class="fa fa-fw fa-arrow-up"></i><span class="back-to-top-text"> Back to Top</span></a>
-        </div>
-    
-
-
-    
-
-    
-
-        <script src="https://s3.amazonaws.com/handsonworkshops.prod.static/nova/libs/jquery/jquery.min.js"></script>
-        <script src="https://s3.amazonaws.com/handsonworkshops.prod.static/nova/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
-        <script src="https://s3.amazonaws.com/handsonworkshops.prod.static/nova/libs/clipboard/clipboard.min.js"></script>
-        <script src="https://s3.amazonaws.com/handsonworkshops.prod.static/nova/workshops/js/common.js"></script>
-
-        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-115508909-1"></script>
-        <script>
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'UA-115508909-1', {
-                'custom_map': {'dimension1': 'user_uuid', 'dimension2': 'workshop_uuid', 'dimension3': 'workshop_name'}
-            });
-    
-            gtag('event', 'workshop_dimensions', {'workshop_uuid': 'd4403954-4939-47f5-8ec6-3a8c72be6cd0', 'workshop_name': 'Global Tech Summit 2020 - EMEA'});
-    
-    
-            gtag('event', 'user_uuid_dimension', {'user_uuid': '446c386e-f08a-4309-bb73-27446d3e4b0f'});
-    
-        </script>
-
-
-    
-        <script>
-            window.user_data = {
-                email: 'jeanpierre.raveleau@nutanix.com',
-                name: 'Jean-Pierre Raveleau',
-                created_at: '1522152603'
-            };
-        </script>
-    
-    
-        <script>
-            jQuery(function ($) {
-                // Post the impression form
-                $.post(
-                    $('#impressed').attr('action'),
-                    $('#impressed').serializeArray(),
-                    function (data, status, xhr) {
-                        if (typeof window.console !== 'undefined') {
-                            console.log(data.success);
-                        }
-                    }
-                );
-            });
-        </script>
-    
-    
-
-    
-    <!-- START: workshop scripts -->
-    <script>
-    if (window.user_data) {
-        // Logged in Intercom settings
-        window.intercomSettings = {
-            app_id: 'kooeblba',
-            name: window.user_data.name,
-            email: window.user_data.email,
-            created_at: window.user_data.created_at
-        };
-    } else {
-        // Not logged in Intercom settings
-        window.intercomSettings = {app_id: 'kooeblba'};
-    }
-
-    // Initialize Intercom
-    (function(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic('reattach_activator');ic('update',w.intercomSettings);}else{var d=document;var i=function(){i.c(arguments);};i.q=[];i.c=function(args){i.q.push(args);};w.Intercom=i;var l=function(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://widget.intercom.io/widget/kooeblba';var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);};if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})();
-</script>
-    <!-- END: workshop scripts -->
-    
-
-    </body>
 </html>

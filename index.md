@@ -367,5 +367,3 @@ sudo chmod +x /usr/local/sbin/production_vm_recovery
 
     </body>
 </html>
-
-</html>

@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
@@ -13,79 +12,7 @@
         <link rel="shortcut icon" href="https://s3.amazonaws.com/handsonworkshops.prod.media/a/a/logo/nutanix-favicon.ico">
 
     </head>
-    <body data-csrf-token="PdhKVLFMMugyjl90O5Mg68Y7uR701RpmQgNC9ROI6C0RgpoqjO2kAvSDHRCvtpQw">
-        <nav id="top" class="navbar navbar-dark bg-dark navbar-expand-lg bs-fonts clearfix">
-            <div class="container">
-                <a class="navbar-brand" href="/workshops/d4403954-4939-47f5-8ec6-3a8c72be6cd0/view/">
-                    <img
 
-                        src="https://s3.amazonaws.com/handsonworkshops.prod.media/a/a/logo/ntnxworkshops.svg"
-
-
-                        alt="Nutanix Workshops">
-
-                </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-content">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div id="navbar-content" class="collapse navbar-collapse">
-                    <ul class="navbar-nav ml-auto">
-
-    
-
-
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">jeanpierre.raveleau@nutanix.com</a>
-                            <div class="dropdown-menu">
-    
-                                <a class="dropdown-item" href="/manage/">Manage Workshops</a>
-    
-                                <form action="/profiles/logout/" method="post" enctype="multipart/form-data">
-                                    <div class="d-none">
-                                        <input type="hidden" name="csrfmiddlewaretoken" value="PdhKVLFMMugyjl90O5Mg68Y7uR701RpmQgNC9ROI6C0RgpoqjO2kAvSDHRCvtpQw">
-                                    </div>
-                                    <button type="submit" class="dropdown-item">Log Out</button>
-                                </form>
-                            </div>
-                        </li>
-
-                    </ul>
-                </div>
-            </div>
-        </nav>
-
-        <div class="main">
-            <div class="container">
-
-            <div class="crumbs row">
-                <div class="col-sm">
-                    <ol class="list-unstyled clearfix">
-    
-                        <li>
-    
-                            <a href="/workshops/d4403954-4939-47f5-8ec6-3a8c72be6cd0/view/"><i class="fa fa-home"></i> Global Tech Summit 2020 - EMEA</a>
-    
-                        </li>
-                        <li><i class="fa fa-chevron-right"></i></li>
-                        <li>
-                            <strong>DR with AHV Sync Rep and Leap</strong>
-                        </li>
-    
-                    </ol>
-                </div>
-            </div>
-
-                <div class="row">
-
-                <div class="col-sm menu-column">
-                    <div class="menu">
-                        <p class="caption"><span class="caption-text">Event Info</span></p>
-
-                    </div>
-                </div>
-                <div class="col-md-7 col-lg-8 col-xl-9 content-column">
-                    <div id="content" class="content document-content">
-                        <div class="section" id="dr-with-ahv-sync-rep-and-leap">
 <span id="onpremleap"></span><h1>DR with AHV Sync Rep and Leap<a class="headerlink" href="#dr-with-ahv-sync-rep-and-leap" title="Permalink to this headline">¶</a></h1>
 <p>The upcoming Nutanix AOS 5.17 release will offer significant enhancements to Leap for on-premises failover operations, including support for execution of guest scripts and synchronous replication with AHV.</p>
 <p><strong>In this lab you deploy a multi-tier application, protect your VMs, build a Recovery Plan for runbook automation, and perform a failover operation to another Nutanix cluster.</strong></p>

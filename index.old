@@ -1,12 +1,28 @@
 <html>
-<h1>vExpert Session :<br/> DR with AHV Sync Rep and Leap</h1>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>DR with AHV Sync Rep and Leap | Nutanix&trade; Workshops</title>
+        <meta name="robots" content="noindex, nofollow">
+        <link rel="stylesheet" media="all" href="https://s3.amazonaws.com/handsonworkshops.prod.static/nova/libs/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" media="all" href="https://s3.amazonaws.com/handsonworkshops.prod.static/nova/libs/font-awesome/css/font-awesome.min.css">
+        <link rel="stylesheet" media="screen" href="https://s3.amazonaws.com/handsonworkshops.prod.static/nova/workshops/css/screen.css">
+        <link rel="stylesheet" media="print" href="https://s3.amazonaws.com/handsonworkshops.prod.static/nova/workshops/css/print.css">
 
+        <link rel="shortcut icon" href="https://s3.amazonaws.com/handsonworkshops.prod.media/a/a/logo/nutanix-favicon.ico">
+
+    </head>
+
+<span id="onpremleap"></span><h1>vExpert Session - DR with AHV Sync Rep and Leap<a class="headerlink" href="#dr-with-ahv-sync-rep-and-leap" title="Permalink to this headline">¶</a></h1>
 <p>The Nutanix AOS 5.17 release offer significant enhancements to Leap for on-premises failover operations, including support for execution of guest scripts and synchronous replication with AHV.</p>
 <p><strong>In this lab you will deploy a multi-tier application, protect your VMs, build a Recovery Plan for runbook automation, and perform a failover operation to another Nutanix cluster.</strong></p>
-<h2>Staging the Application<h2/>
-<h3>Provisioning Your Application</h3>
-<ul class="simple">
+<div class="section" id="staging-the-application">
+<h2>Staging the Application<a class="headerlink" href="#staging-the-application" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="provisioning-your-application">
+<h3>Provisioning Your Application<a class="headerlink" href="#provisioning-your-application" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
 <li><p>Log in to Prism Central for your <strong>PrimarySite</strong> cluster using the following credentials:</p>
+<ul class="simple">
 <li><p><strong>Username</strong> - admin</p></li>
 <li><p><strong>Password</strong> - nx2Tech123!</p></li>
 </ul>
@@ -235,5 +251,18 @@ sudo chmod +x /usr/local/sbin/production_vm_recovery
 <li><p>Delete your Recovery Plan and Protection Policy</p></li>
 <li><p>Delete your VMs from the <strong>SecondarySite</strong></p></li>
 <li><p>Delete your <em>Initials</em><strong>-FiestaApp</strong> application in Calm (<strong>DO NOT DELETE THE BLUEPRINT</strong>) on your <strong>PrimarySite</strong> and validate the VMs have been deleted.</p></li>
-
+</ol>
+</div>
+                    <div data-next-page class="next-page clearfix">
+                        <a class="btn btn-primary float-right" href="#">Next: <span data-next-page-title></span> <i class="fa fa-fw fa-chevron-right btn-icon"></i></a>
+                    </div>
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm">
+                        <p>Powered by Hands-on Workshops&trade;.</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
 </html>

@@ -121,8 +121,7 @@ sudo chmod +x /usr/local/sbin/production_vm_recovery
 <li><p>Click <strong>Save</strong>.</p></li>
 </ol>
 </div>
-<div class="section" id="assigning-a-protection-policy">
-<h2>Assigning A Protection Policy</a></h2>
+<h2>Assigning A Protection Policy</h2>
 <ol class="arabic">
 <li><p>In Prism Central, open <em class="fa fa-bars"></em> <strong>&gt; Virtual Infrastructure &gt; VMs</strong>.</p></li>
 <li><p>Select both of your VMs and click <strong>Actions &gt; Protect</strong>.</p></li>

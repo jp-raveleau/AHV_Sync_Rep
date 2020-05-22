@@ -1,6 +1,5 @@
 <html>
 <h1>vExpert Session :<br/> DR with AHV Sync Rep and Leap</h1>
-
 <p>The Nutanix AOS 5.17 release offer significant enhancements to Leap for on-premises failover operations, including support for execution of guest scripts and synchronous replication with AHV.</p>
 <p><strong>In this lab you will deploy a multi-tier application, protect your VMs, build a Recovery Plan for runbook automation, and perform a failover operation to another Nutanix cluster.</strong></p>
 <h2>Staging the Application<h2/>
@@ -235,5 +234,4 @@ sudo chmod +x /usr/local/sbin/production_vm_recovery
 <li><p>Delete your Recovery Plan and Protection Policy</p></li>
 <li><p>Delete your VMs from the <strong>SecondarySite</strong></p></li>
 <li><p>Delete your <em>Initials</em><strong>-FiestaApp</strong> application in Calm (<strong>DO NOT DELETE THE BLUEPRINT</strong>) on your <strong>PrimarySite</strong> and validate the VMs have been deleted.</p></li>
-
 </html>

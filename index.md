@@ -38,7 +38,7 @@
 </ol>
 </div>
 <div class="section" id="installing-nutanix-guest-tools">
-<h3>Installing Nutanix Guest Tools<a class="headerlink" href="#installing-nutanix-guest-tools" title="Permalink to this headline">¶</a></h3>
+<h3>Installing Nutanix Guest Tools</h3>
 <ol class="arabic">
 <li><p>Open <em class="fa fa-bars"></em> <strong>&gt; Virtual Infrastructure &gt; VMs</strong>.</p></li>
 <li><p>Select your <em>Initials</em><strong>-WebServer-…</strong> VM and click <strong>Actions &gt; Update</strong>.</p></li>
@@ -73,7 +73,7 @@
 </div>
 </div>
 <div class="section" id="staging-guest-script">
-<h2>Staging Guest Script<a class="headerlink" href="#staging-guest-script" title="Permalink to this headline">¶</a></h2>
+<h2>Staging Guest Script</h2>
 <p>New in 5.17, Leap allows you to execute scripts within a guest to update configuration files or perform other critical functions as part of the runbook. In this exercise you’ll stage a script on your WebServer VM that will update its configuration file responsible for the MySQL VM connection, allowing the WebServer to connect to the MySQL database after failover to our <strong>SecondarySite</strong> network.</p>
 <ol class="arabic">
 <li><p>SSH into your <em>Initials</em><strong>-WebServer-…</strong> VM using the following credentials:</p>
@@ -96,7 +96,7 @@ sudo chmod +x /usr/local/sbin/production_vm_recovery
 </ol>
 </div>
 <div class="section" id="creating-a-protection-policy">
-<h2>Creating A Protection Policy<a class="headerlink" href="#creating-a-protection-policy" title="Permalink to this headline">¶</a></h2>
+<h2>Creating A Protection Policy</h2>
 <ol class="arabic">
 <li><p>In Prism Central, open <em class="fa fa-bars"></em> <strong>&gt; Policies &gt; Protection Policies</strong>.</p></li>
 <li><p>Click <strong>Create Protection Policy</strong>.</p></li>
@@ -122,7 +122,7 @@ sudo chmod +x /usr/local/sbin/production_vm_recovery
 </ol>
 </div>
 <div class="section" id="assigning-a-protection-policy">
-<h2>Assigning A Protection Policy<a class="headerlink" href="#assigning-a-protection-policy" title="Permalink to this headline">¶</a></h2>
+<h2>Assigning A Protection Policy</a></h2>
 <ol class="arabic">
 <li><p>In Prism Central, open <em class="fa fa-bars"></em> <strong>&gt; Virtual Infrastructure &gt; VMs</strong>.</p></li>
 <li><p>Select both of your VMs and click <strong>Actions &gt; Protect</strong>.</p></li>
@@ -144,7 +144,7 @@ sudo chmod +x /usr/local/sbin/production_vm_recovery
 </ol>
 </div>
 <div class="section" id="creating-a-recovery-plan">
-<h2>Creating A Recovery Plan<a class="headerlink" href="#creating-a-recovery-plan" title="Permalink to this headline">¶</a></h2>
+<h2>Creating A Recovery Plan</h2>
 <ol class="arabic">
 <li><p>In Prism Central, open <em class="fa fa-bars"></em> <strong>&gt; Policies &gt; Recovery Plans</strong>.</p></li>
 <li><p>Click <strong>Create Recovery Plan</strong>.</p></li>
@@ -189,7 +189,7 @@ sudo chmod +x /usr/local/sbin/production_vm_recovery
 </ol>
 </div>
 <div class="section" id="performing-an-unplanned-failover">
-<h2>Performing An Unplanned Failover<a class="headerlink" href="#performing-an-unplanned-failover" title="Permalink to this headline">¶</a></h2>
+<h2>Performing An Unplanned Failover</h2>
 <p>Before performing our failover, we’ll make a quick update to our application.</p>
 <ol class="arabic">
 <li><p>Open <a class="reference external" href="http:/">http:/</a>/&lt;<em>Initials-WebServer-VM-IP-Address:5001</em>&gt; in another browser tab.</p></li>
@@ -228,7 +228,7 @@ sudo chmod +x /usr/local/sbin/production_vm_recovery
 </ol>
 </div>
 <div class="section" id="cleanup">
-<h2>Cleanup<a class="headerlink" href="#cleanup" title="Permalink to this headline">¶</a></h2>
+<h2>Cleanup</h2>
 <p>After validating your lab, please clean up the environment by doing the following:</p>
 <ol class="arabic simple">
 <li><p>Delete your Recovery Plan and Protection Policy</p></li>

@@ -14,19 +14,17 @@
     </head>
 
 <span id="onpremleap"></span><h1>vExpert Session - DR with AHV Sync Rep and Leap<a class="headerlink" href="#dr-with-ahv-sync-rep-and-leap" title="Permalink to this headline">¶</a></h1>
-<p>The upcoming Nutanix AOS 5.17 release will offer significant enhancements to Leap for on-premises failover operations, including support for execution of guest scripts and synchronous replication with AHV.</p>
-<p><strong>In this lab you deploy a multi-tier application, protect your VMs, build a Recovery Plan for runbook automation, and perform a failover operation to another Nutanix cluster.</strong></p>
+<p>The Nutanix AOS 5.17 release offer significant enhancements to Leap for on-premises failover operations, including support for execution of guest scripts and synchronous replication with AHV.</p>
+<p><strong>In this lab you will deploy a multi-tier application, protect your VMs, build a Recovery Plan for runbook automation, and perform a failover operation to another Nutanix cluster.</strong></p>
 <div class="section" id="staging-the-application">
 <h2>Staging the Application<a class="headerlink" href="#staging-the-application" title="Permalink to this headline">¶</a></h2>
-<p><strong>THIS LAB USES DEDICATED CLUSTERS USING PRE-RELEASE 5.17 AOS. YOU CANNOT COMPLETE THIS LAB USING THE CLUSTER YOU WERE ASSIGNED FOR OTHER LABS</strong>.</p>
-<p><strong>IT IS CRITICAL TO DELETE YOUR VMS AFTER COMPLETING THE LAB SO OTHER USERS HAVE AVAILABLE MEMORY AND IP ADDRESSES</strong>.</p>
 <div class="section" id="provisioning-your-application">
 <h3>Provisioning Your Application<a class="headerlink" href="#provisioning-your-application" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic">
-<li><p>Log in to Prism Central for your <strong>PrimarySite</strong> cluster at <a class="reference external" href="https://10.38.194.40:9440/">https://10.38.194.40:9440/</a> using the following credentials:</p>
+<li><p>Log in to Prism Central for your <strong>PrimarySite</strong> cluster using the following credentials:</p>
 <ul class="simple">
 <li><p><strong>Username</strong> - admin</p></li>
-<li><p><strong>Password</strong> - techX2020!</p></li>
+<li><p><strong>Password</strong> - nx2Tech123!</p></li>
 </ul>
 </li>
 <li><p>Open <em class="fa fa-bars"></em> <strong>&gt; Administration &gt; Availability Zones</strong> and observe that the cluster has already been paired to another Prism Central instance containing your <strong>SecondarySite</strong> cluster. No action is required to add additional Availability Zones for this lab.</p>
@@ -43,7 +41,8 @@
 <li><p>Fill out the following fields and then click <strong>Create</strong> to begin provisioning your application:</p>
 <ul class="simple">
 <li><p><strong>Name of the Application</strong> - <em>Initials</em>-FiestaApp</p></li>
-<li><p><strong>UserInitials</strong> - <em>Initials</em></p></li>
+<li><p><strong>Initials</strong> - <em>Initials</em></p></li>
+<li><p><strong>SQL Password</strong> - <em>What you want</em></p></li>
 </ul>
 </li>
 <li><p>Monitor the status of the application in the <strong>Audit</strong> tab and proceed once your application enters a <strong>Running</strong> state.</p></li>
@@ -122,7 +121,7 @@ sudo chmod +x /usr/local/sbin/production_vm_recovery
 <ul class="simple">
 <li><p><strong>Name</strong> - <em>Initials</em>-FiestaProtection</p></li>
 <li><p><strong>Primary Cluster(s)</strong> - PrimarySite</p></li>
-<li><p><strong>Recovery Location</strong> - PC_10.38.173.40</p></li>
+<li><p><strong>Recovery Location</strong> - PC_10.42.xx.xx</p></li>
 <li><p><strong>Target Cluster</strong> - SecondarySite</p></li>
 <li><p>Under <strong>Policy Type</strong>, select <strong>Synchronous</strong></p></li>
 <li><p>Under <strong>Failure Handling</strong>, select <strong>Automatic</strong></p></li>
@@ -166,7 +165,7 @@ sudo chmod +x /usr/local/sbin/production_vm_recovery
 <ol class="arabic">
 <li><p>In Prism Central, open <em class="fa fa-bars"></em> <strong>&gt; Policies &gt; Recovery Plans</strong>.</p></li>
 <li><p>Click <strong>Create Recovery Plan</strong>.</p></li>
-<li><p>Select <strong>PC_10.38.173.40</strong> as your <strong>Recovery Location</strong> and click <strong>Proceed</strong>.</p></li>
+<li><p>Select <strong>PC_10.42.xx.xx</strong> as your <strong>Recovery Location</strong> and click <strong>Proceed</strong>.</p></li>
 <li><p>Specify <em>Initials</em><strong>-FiestaRecovery</strong> as your <strong>Recovery Plan Name</strong> and click <strong>Next</strong>.</p></li>
 <li><p>Under <strong>Power On Sequence</strong> we will add our VMs in stages to the plan. Click <strong>+ Add Entities</strong>.</p></li>
 <li><p>Select your <em>Initials</em><strong>-MySQL-…</strong> VM and click <strong>Add</strong>.</p>
@@ -198,7 +197,7 @@ sudo chmod +x /usr/local/sbin/production_vm_recovery
 <li><p>Click <strong>Next</strong>.</p>
 <p>In this step you will map VM networks from your primary site to your recovery site.</p>
 </li>
-<li><p>Select <strong>VLAN1943</strong> for <strong>Local AZ Production</strong> and <strong>Local AZ Test Failback</strong> Virtual Networks. Select <strong>VLAN1733</strong> for <strong>PC_10.38.173.40 Production</strong> and <strong>PC_10.38.173.40 Test Failback</strong> Virtual Networks.</p>
+<li><p>Select <strong>VLANx</strong> for <strong>Local AZ Production</strong> and <strong>Local AZ Test Failback</strong> Virtual Networks. Select <strong>VLANx</strong> for <strong>PC_10.42.x.x Production</strong> and <strong>PC_10.42.x.x Test Failback</strong> Virtual Networks.</p>
 <div class="figure align-default">
 <img alt="../../_images/1515.png" src="https://s3.amazonaws.com/handsonworkshops.prod.media/ws/d4403954493947f58ec63a8c72be6cd0/i/file/421830c402ed4fa4a1d17d296ff06830/1515.png" />
 </div>
@@ -216,10 +215,10 @@ sudo chmod +x /usr/local/sbin/production_vm_recovery
 <img alt="../../_images/1615.png" src="https://s3.amazonaws.com/handsonworkshops.prod.media/ws/d4403954493947f58ec63a8c72be6cd0/i/file/421830c402ed4fa4a1d17d296ff06830/1615.png" />
 </div>
 </li>
-<li><p>Log in to Prism Central for your <strong>SecondarySite</strong> (NOT YOUR <strong>PrimarySite</strong> CLUSTER) at <a class="reference external" href="https://10.38.173.40:9440/">https://10.38.173.40:9440/</a> using the following credentials:</p>
+<li><p>Log in to Prism Central for your <strong>SecondarySite</strong> (NOT YOUR <strong>PrimarySite</strong> CLUSTER) using the following credentials:</p>
 <ul class="simple">
 <li><p><strong>Username</strong> - admin</p></li>
-<li><p><strong>Password</strong> - emeaX2020!</p></li>
+<li><p><strong>Password</strong> - nx2Tech123!</p></li>
 </ul>
 </li>
 <li><p>Open <em class="fa fa-bars"></em> <strong>&gt; Policies &gt; Recovery Plans</strong>.</p></li>

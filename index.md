@@ -10,27 +10,33 @@
 <li><p><strong>Password</strong> - nx2Tech123!</p></li>
 </ul>
 </li>
+<ol class="arabic">
 <li><p>Open <em class="fa fa-bars"></em> <strong>&gt; Administration &gt; Availability Zones</strong> and observe that the cluster has already been paired to another Prism Central instance containing your <strong>SecondarySite</strong> cluster. No action is required to add additional Availability Zones for this lab.</p>
 <div class="figure align-default">
 <img alt="../../_images/1104.png" src="https://s3.amazonaws.com/handsonworkshops.prod.media/ws/d4403954493947f58ec63a8c72be6cd0/i/file/421830c402ed4fa4a1d17d296ff06830/1104.png" />
 </div>
 </li>
+<li><p>Open <em class="fa fa-bars"></em> <strong>&gt; Virtual Infrastructure &gt;Categories </strong>
+<p><img src="images/categories.png" style="width:600px;" tag="image3"/></p>
+<li>Add your value <em>SLA_< initials ></em>and <strong>Save</strong>
+<p><img src="images/values.png" style="width:500px;" tag="image3"/></p>
 <li><p>Open <em class="fa fa-bars"></em> <strong>&gt; Services &gt; Calm</strong> and select <strong>Blueprints</strong> from the sidebar.</p></li>
-<li><p>Select the <strong>FiestaApp</strong> Blueprint and click <strong>Actions &gt; Launch</strong>.</p>
-<div class="figure align-default">
-<img alt="../../_images/249.png" src="https://s3.amazonaws.com/handsonworkshops.prod.media/ws/d4403954493947f58ec63a8c72be6cd0/i/file/421830c402ed4fa4a1d17d296ff06830/249.png" />
-</div>
-</li>
+<li><p>Select the <strong>Fiesta-Multi_JP</strong> Blueprint and take a look at the blueprint (VMs configuration, dependencies, scripts, etc ..) </li>
+<li> From the configuration of each VMs (right pane), assign your Categorie <em>SLA_Initial</em> value and click <strong>Save</strong> </li>
+<p><img src="images/calm_assign_categories.png" style="width:600px;" tag="image3"/></p>
+<li>Click <strong>Launch</strong>.</p></li>
+<p><img src="images/calm_launch.png" style="width:600px;" tag="image3"/></p>
 <li><p>Fill out the following fields and then click <strong>Create</strong> to begin provisioning your application:</p>
 <ul class="simple">
-<li><p><strong>Name of the Application</strong> - <em>Initials</em>-FiestaApp</p></li>
+<li><p><strong>Name of the Application</strong> - <em>Initials</em>-Fiesta</p></li>
 <li><p><strong>Initials</strong> - <em>Initials</em></p></li>
-<li><p><strong>SQL Password</strong> - <em>What you want</em></p></li>
+<li><p><strong>db_password</strong> - <em> choose your password</em></p></li>
 </ul>
 </li>
 <li><p>Monitor the status of the application in the <strong>Audit</strong> tab and proceed once your application enters a <strong>Running</strong> state.</p></li>
+<p><img src="images/calm_audit.png" style="width:600px;" tag="image3"/></p>
 <li><p>On the <strong>Services</strong> tab, select the <strong>NodeReact</strong> service and note the IP Address. This is the web server hosting the front end of your application.</p></li>
-<li><p>Open <a class="reference external" href="http:/">http:/</a>/&lt;<em>NodeReact-VM-IP-Address:5001</em>&gt; in a new browser tab and validate you can access the Fiesta Inventory Management app.</p>
+<li><p>Open <a class="reference external" href="http:/">http:/</a>/&lt;<em>nodereact-VM-IP-Address:5001</em>&gt; in a new browser tab and validate you can access the Fiesta Inventory Management app.</p>
 <div class="figure align-default">
 <img alt="../../_images/519.png" src="https://s3.amazonaws.com/handsonworkshops.prod.media/ws/d4403954493947f58ec63a8c72be6cd0/i/file/421830c402ed4fa4a1d17d296ff06830/519.png" />
 </div>
@@ -84,7 +90,7 @@
 </li>
 <li><p>Within the VM SSH session, execute the following:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> /usr/local/sbin
-sudo wget https://raw.githubusercontent.com/nutanixworkshops/ts2020/master/onpremleap/production_vm_recovery
+sudo wget https://raw.githubusercontent.com/jp-raveleau/ts2020/master/onpremleap/production_vm_recovery
 sudo chmod +x /usr/local/sbin/production_vm_recovery
 </pre></div>
 </div>
@@ -104,24 +110,22 @@ sudo chmod +x /usr/local/sbin/production_vm_recovery
 <ul class="simple">
 <li><p><strong>Name</strong> - <em>Initials</em>-FiestaProtection</p></li>
 <li><p><strong>Primary Cluster(s)</strong> - PrimarySite</p></li>
-<li><p><strong>Recovery Location</strong> - PC_10.42.xx.xx</p></li>
+<li><p><strong>Recovery Location</strong> - <em>< PC name site recovery ></em> </p></li>
 <li><p><strong>Target Cluster</strong> - SecondarySite</p></li>
 <li><p>Under <strong>Policy Type</strong>, select <strong>Synchronous</strong></p></li>
 <li><p>Under <strong>Failure Handling</strong>, select <strong>Automatic</strong></p></li>
 <li><p><strong>Timeout After</strong> - 10 Seconds</p></li>
 </ul>
-<div class="figure align-default">
-<img alt="../../_images/719.png" src="https://s3.amazonaws.com/handsonworkshops.prod.media/ws/d4403954493947f58ec63a8c72be6cd0/i/file/421830c402ed4fa4a1d17d296ff06830/719.png" />
-</div>
+<p><img src="images/protectionpolicy.png" style="width:500px;" tag="image3"/></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Protection policies can be automatically applied based on Category assignment, allowing VMs to be automatically protected from their initial provisioning. We will not assign categories in this lab.</p>
+<p>Protection policies can be automatically applied based on Category assignment, allowing VMs to be automatically protected from their initial provisioning. You can assign the Categorie you configure in the blueprint or continue to assign the VMs manually.</p>
 </div>
 </li>
 <li><p>Click <strong>Save</strong>.</p></li>
 </ol>
 </div>
-<h2>Assigning A Protection Policy</h2>
+<h2>Manually assigning A Protection Policy</h2>
 <ol class="arabic">
 <li><p>In Prism Central, open <em class="fa fa-bars"></em> <strong>&gt; Virtual Infrastructure &gt; VMs</strong>.</p></li>
 <li><p>Select both of your VMs and click <strong>Actions &gt; Protect</strong>.</p></li>
@@ -179,10 +183,8 @@ sudo chmod +x /usr/local/sbin/production_vm_recovery
 <li><p>Click <strong>Next</strong>.</p>
 <p>In this step you will map VM networks from your primary site to your recovery site.</p>
 </li>
-<li><p>Select <strong>VLANx</strong> for <strong>Local AZ Production</strong> and <strong>Local AZ Test Failback</strong> Virtual Networks. Select <strong>VLANx</strong> for <strong>PC_10.42.x.x Production</strong> and <strong>PC_10.42.x.x Test Failback</strong> Virtual Networks.</p>
-<div class="figure align-default">
-<img alt="../../_images/1515.png" src="https://s3.amazonaws.com/handsonworkshops.prod.media/ws/d4403954493947f58ec63a8c72be6cd0/i/file/421830c402ed4fa4a1d17d296ff06830/1515.png" />
-</div>
+<li><p>Select <strong>Your network</strong> for <strong>Local AZ Production</strong> and <strong>Local AZ Test Failback</strong> Virtual Networks. Select <strong>Your network</strong> for <strong>PC_10.42.x.x Production</strong> and <strong>PC_10.42.x.x Test Failback</strong> Virtual Networks.</p>
+<p><img src="images/rp_networkconfig.png" style="width:600px;" tag="image4"/></p>
 </li>
 <li><p>Click <strong>Done</strong>.</p></li>
 </ol>
@@ -214,7 +216,7 @@ sudo chmod +x /usr/local/sbin/production_vm_recovery
 <img alt="../../_images/1815.png" src="https://s3.amazonaws.com/handsonworkshops.prod.media/ws/d4403954493947f58ec63a8c72be6cd0/i/file/421830c402ed4fa4a1d17d296ff06830/1815.png" />
 </div>
 </li>
-<li><p>Ignore any warnings related to Calm categories not found in the Recovery AZ and click <strong>Execute Anyway</strong>.</p></li>
+<li><p>Ignore any warnings related to licensing and Calm categories not found in the Recovery AZ and click <strong>Execute Anyway</strong>.</p></li>
 <li><p>Click the <strong>Name</strong> of your Recovery Plan to monitor status of plan execution. Select <strong>Tasks &gt; Failover</strong> for full details.</p>
 <div class="figure align-default">
 <img alt="../../_images/209.png" src="https://s3.amazonaws.com/handsonworkshops.prod.media/ws/d4403954493947f58ec63a8c72be6cd0/i/file/421830c402ed4fa4a1d17d296ff06830/209.png" />

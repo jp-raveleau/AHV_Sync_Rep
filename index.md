@@ -226,13 +226,3 @@ sudo chmod +x /usr/local/sbin/production_vm_recovery
 <li><p>Open <a class="reference external" href="http:/">http:/</a>/&lt;<em>Initials-WebServer-VM-NEW-IP-Address:5001</em>&gt; in another browser tab and verify the change you’d made to your application is present.</p>
 <p>Congratulations! You’ve completed your first DR failover with Nutaix AHV, leveraging native Leap runbook capabilities and synchronous replication.</p>
 </li>
-</ol>
-</div>
-<div class="section" id="cleanup">
-<h2>Cleanup</h2>
-<p>After validating your lab, please clean up the environment by doing the following:</p>
-<ol class="arabic simple">
-<li><p>Delete your Recovery Plan and Protection Policy</p></li>
-<li><p>Delete your VMs from the <strong>SecondarySite</strong></p></li>
-<li><p>Delete your <em>Initials</em><strong>-FiestaApp</strong> application in Calm (<strong>DO NOT DELETE THE BLUEPRINT</strong>) on your <strong>PrimarySite</strong> and validate the VMs have been deleted.</p></li>
-</html>

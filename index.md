@@ -64,7 +64,7 @@
 <li><p>Provide the following credentials and click <strong>Done</strong> to begin the NGT installation:</p>
 <ul class="simple">
 <li><p><strong>User Name</strong> - centos</p></li>
-<li><p><strong>Password</strong> - nutanix/4u</p></li>
+<li><p><strong>Password</strong> - Nutanix/4u</p></li>
 </ul>
 <div class="figure align-default">
 <img alt="../../_images/4c.png" src="https://s3.amazonaws.com/handsonworkshops.prod.media/ws/d4403954493947f58ec63a8c72be6cd0/i/file/421830c402ed4fa4a1d17d296ff06830/4c.png" />

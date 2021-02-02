@@ -7,7 +7,6 @@
 <li><p>Log in to Prism Central for your <strong>PrimarySite</strong> cluster using the following credentials:</p>
 <li><p><strong>Username</strong> - admin</p></li>
 <li><p><strong>Password</strong> - nx2Tech123!</p></li>
-</ul>
 </li>
 <ol class="arabic">
 <li><p>Open <em class="fa fa-bars"></em> <strong>&gt; Administration &gt; Availability Zones</strong> and observe that the cluster has already been paired to another Prism Central instance containing your <strong>SecondarySite</strong> cluster. No action is required to add additional Availability Zones for this lab.</p>

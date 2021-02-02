@@ -75,7 +75,6 @@
 </li>
 </ol>
 </div>
-</div>
 <div class="section" id="staging-guest-script">
 <h2>Staging Guest Script</h2>
 <p>New in 5.17, Leap allows you to execute scripts within a guest to update configuration files or perform other critical functions as part of the runbook. In this exercise you’ll stage a script on your WebServer VM that will update its configuration file responsible for the MySQL VM connection, allowing the WebServer to connect to the MySQL database after failover to our <strong>SecondarySite</strong> network.</p>

@@ -1,6 +1,6 @@
 <h1>vExpert Session :<br/> DR with AHV Sync Rep and Leap</h1>
 <p>The Nutanix AOS 5.17 - 5.19 release offer significant enhancements to Leap for on-premises failover operations, including support for execution of guest scripts and synchronous replication with AHV.</p>
-<p><strong>In this lab you will deploy a multi-tier application, protect your VMs, build a Recovery Plan for runbook automation, and perform a failover operation to another Nutanix cluster.</strong></p>
+<p><strong>In this lab you will deploy a multi-tier application, protect your VMs, build a Recovery Plan for runbook automation, and perform a (planned or unplanned) failover operation to another Nutanix cluster.</strong></p>
 <h2>Staging the Application<h2/>
 <h3>Provisioning Your Application</h3>
 <ul class="simple">
@@ -115,16 +115,18 @@ sudo chmod +x /usr/local/sbin/production_vm_recovery
 <li><p>Under <strong>Failure Handling</strong>, select <strong>Automatic</strong></p></li>
 <li><p><strong>Timeout After</strong> - 10 Seconds</p></li>
 </ul>
-<p><img src="images/protectionpolicy.png" style="width:500px;" tag="image3"/></p>
+<p><img src="images/PP_519_01.JPG" style="width:700px;" tag="image3"/></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Protection policies can be automatically applied based on Category assignment, allowing VMs to be automatically protected from their initial provisioning. You can assign the Categorie you configure in the blueprint or continue to assign the VMs manually.</p>
+
+<p><img src="images/PP_519_02.JPG" style="width:700px;" tag="image3"/></p>
 </div>
 </li>
 <li><p>Click <strong>Save</strong>.</p></li>
 </ol>
 </div>
-<h2>Manually assigning A Protection Policy</h2>
+<h2>(alternative) Manually assigning A Protection Policy</h2>
 <ol class="arabic">
 <li><p>In Prism Central, open <em class="fa fa-bars"></em> <strong>&gt; Virtual Infrastructure &gt; VMs</strong>.</p></li>
 <li><p>Select both of your VMs and click <strong>Actions &gt; Protect</strong>.</p></li>
@@ -150,7 +152,7 @@ sudo chmod +x /usr/local/sbin/production_vm_recovery
 <ol class="arabic">
 <li><p>In Prism Central, open <em class="fa fa-bars"></em> <strong>&gt; Policies &gt; Recovery Plans</strong>.</p></li>
 <li><p>Click <strong>Create Recovery Plan</strong>.</p></li>
-<li><p>Select <strong>PC_10.42.xx.xx</strong> as your <strong>Recovery Location</strong> and click <strong>Proceed</strong>.</p></li>
+<li><p>Select <em> SecondarySite </em> as your <strong>Recovery Location</strong> and click <strong>Proceed</strong>.</p></li>
 <li><p>Specify <em>Initials</em><strong>-FiestaRecovery</strong> as your <strong>Recovery Plan Name</strong> and click <strong>Next</strong>.</p></li>
 <li><p>Under <strong>Power On Sequence</strong> we will add our VMs in stages to the plan. Click <strong>+ Add Entities</strong>.</p></li>
 <li><p>Select your <em>Initials</em><strong>-MySQL-…</strong> VM and click <strong>Add</strong>.</p>
@@ -182,14 +184,14 @@ sudo chmod +x /usr/local/sbin/production_vm_recovery
 <li><p>Click <strong>Next</strong>.</p>
 <p>In this step you will map VM networks from your primary site to your recovery site.</p>
 </li>
-<li><p>Select <strong>Your network</strong> for <strong>Local AZ Production</strong> and <strong>Local AZ Test Failback</strong> Virtual Networks. Select <strong>Your network</strong> for <strong>PC_10.42.x.x Production</strong> and <strong>PC_10.42.x.x Test Failback</strong> Virtual Networks.</p>
+<li><p>Select <strong>Your network</strong> for <strong>Local AZ Production</strong> and <strong>Local AZ Test Failback</strong> Virtual Networks. Select <strong>Your network</strong> for <strong>PC_SecondarySite Production</strong> and <strong>PC_SecondarySite Test Failover</strong> Virtual Networks.</p>
 <p><img src="images/rp_networkconfig.png" style="width:600px;" tag="image4"/></p>
 </li>
 <li><p>Click <strong>Done</strong>.</p></li>
 </ol>
 </div>
 <div class="section" id="performing-an-unplanned-failover">
-<h2>Performing An Unplanned Failover</h2>
+<h2>Performing An Unplanned (or Planned) Failover</h2>
 <p>Before performing our failover, we’ll make a quick update to our application.</p>
 <ol class="arabic">
 <li><p>Open <a class="reference external" href="http:/">http:/</a>/&lt;<em>Initials-WebServer-VM-IP-Address:5001</em>&gt; in another browser tab.</p></li>
@@ -224,4 +226,3 @@ sudo chmod +x /usr/local/sbin/production_vm_recovery
 <li><p>Once the Recovery Plan reaches 100%, open <em class="fa fa-bars"></em> <strong>&gt; Virtual Infrastructure &gt; VMs</strong> and note the <em>new</em> IP Address of your <em>Initials</em><strong>-WebServer-…</strong>.</p></li>
 <li><p>Open <a class="reference external" href="http:/">http:/</a>/&lt;<em>Initials-WebServer-VM-NEW-IP-Address:5001</em>&gt; in another browser tab and verify the change you’d made to your application is present.</p>
 <p>Congratulations! You’ve completed your first DR failover with Nutaix AHV, leveraging native Leap runbook capabilities and synchronous replication.</p>
-</li>

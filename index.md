@@ -39,8 +39,6 @@
 <img alt="../../_images/519.png" src="https://s3.amazonaws.com/handsonworkshops.prod.media/ws/d4403954493947f58ec63a8c72be6cd0/i/file/421830c402ed4fa4a1d17d296ff06830/519.png" />
 </div>
 </li>
-</ol>
-</div>
 <div class="section" id="installing-nutanix-guest-tools">
 <h3>Installing Nutanix Guest Tools</h3>
 <ol class="arabic">

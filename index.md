@@ -1,5 +1,5 @@
 <h1>vExpert Session :<br/> DR with AHV Sync Rep and Leap</h1>
-<p>The Nutanix AOS 5.17 release offer significant enhancements to Leap for on-premises failover operations, including support for execution of guest scripts and synchronous replication with AHV.</p>
+<p>The Nutanix AOS 5.17 - 5.19 release offer significant enhancements to Leap for on-premises failover operations, including support for execution of guest scripts and synchronous replication with AHV.</p>
 <p><strong>In this lab you will deploy a multi-tier application, protect your VMs, build a Recovery Plan for runbook automation, and perform a failover operation to another Nutanix cluster.</strong></p>
 <h2>Staging the Application<h2/>
 <h3>Provisioning Your Application</h3>
